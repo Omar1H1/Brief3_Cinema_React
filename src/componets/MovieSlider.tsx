@@ -4,17 +4,26 @@ import SliderArrow from './SliderArrow';
 
 const baseImageUrl = 'https://image.tmdb.org/t/p/original';
 
+interface Movie {
+  poster_path: string;
+}
+
 const MovieSlider = () => {
-  const [movieList, setMovieList] = useState([]);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const elementRef = useRef();
+  const [movieList, setMovieList] = useState<Movie[]>([]);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   const sliderRight = () => {
-    elementRef.current.scrollLeft += screenWidth - 110;
+    if (elementRef && elementRef.current) {
+      (elementRef.current as HTMLDivElement).scrollLeft +=
+        window.innerWidth - 110;
+    }
   };
 
   const sliderLeft = () => {
-    elementRef.current.scrollLeft -= screenWidth - 110;
+    if (elementRef && elementRef.current) {
+      (elementRef.current as HTMLDivElement).scrollLeft -=
+        window.innerWidth - 110;
+    }
   };
 
   useEffect(() => {

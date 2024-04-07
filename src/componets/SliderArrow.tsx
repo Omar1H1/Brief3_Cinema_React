@@ -1,6 +1,11 @@
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 
-const SliderArrow = ({ direction, onClick }) => {
+interface SliderArrowProps {
+  direction: 'left' | 'right';
+  onClick: () => void;
+}
+
+const SliderArrow: React.FC<SliderArrowProps> = ({ direction, onClick }) => {
   const ArrowIcon = direction === 'left' ? HiChevronLeft : HiChevronRight;
 
   return (

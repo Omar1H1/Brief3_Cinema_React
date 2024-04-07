@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { HiPlus } from 'react-icons/hi';
 import {
   HiHome,

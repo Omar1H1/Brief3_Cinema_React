@@ -1,5 +1,3 @@
-import React from 'react';
-
 const HeaderItem = ({ name, Icon }) => {
   return (
     <div
